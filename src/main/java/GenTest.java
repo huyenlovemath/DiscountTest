@@ -9,8 +9,8 @@ import java.util.Random;
 
 public class GenTest {
 
-    public static String data_file_path = System.getProperty("user.dir") + "\\src\\main\\resources\\data_to_gen.json";
-    public static String testcase_file_path = System.getProperty("user.dir") + "\\src\\main\\resources\\testcase.json";
+    public static final String data_file_path = System.getProperty("user.dir") + "\\src\\main\\resources\\data_to_gen.json";
+    public static final String testcase_file_path = System.getProperty("user.dir") + "\\src\\main\\resources\\testcase.json";
 
     public static void main(String[] args) throws IOException {
         System.out.println("Nguyen Thanh Huyen 18020666");
@@ -101,7 +101,7 @@ public class GenTest {
             testcase.put(expected_value);
             System.out.println("Testcase: " + testcase.toString());
 
-            result.putAll(testcase);
+            result.put(testcase);
 
         }
         WriteTestcaseToFile(result);
