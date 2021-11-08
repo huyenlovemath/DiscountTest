@@ -97,14 +97,16 @@ public class GenTest {
 
             }
 
-            // print and write testcase to a file
+            // print testcase for checking
             testcase.put(expected_value);
             System.out.println("Testcase: " + testcase.toString());
-            result.put(i_test, (JSONArray)testcase);
 
+            result.put(i_test, (JSONArray)testcase);
             System.out.println("Result: " + result.toString());
 
         }
+
+        //write all testcases to a file
         WriteTestcaseToFile(result);
 
     }
