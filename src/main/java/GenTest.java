@@ -53,8 +53,6 @@ public class GenTest {
         n_actions       = action_array.length();
         n_tests         = rule_array.length();
 
-        // testcase is array of 4 value [param1, param2, param3, expected_output]
-        testcase = new JSONArray();
 
         // array to store all testcases
         result = new JSONArray();
@@ -65,8 +63,10 @@ public class GenTest {
             System.out.println(rule_array.getJSONArray(i_test).toString());
             rule_set = rule_array.getJSONArray(i_test);
 
+            // testcase is array of 4 value [param1, param2, param3, expected_output]
+            testcase = new JSONArray();
             expected_value = 0;
-            testcase.clear();
+
 
             for ( int i = 0; i < rule_set.length(); i++)
             {
@@ -100,8 +100,9 @@ public class GenTest {
             // print and write testcase to a file
             testcase.put(expected_value);
             System.out.println("Testcase: " + testcase.toString());
+            result.put(i_test, (JSONArray)testcase);
 
-            result.put(testcase);
+            System.out.println("Result: " + result.toString());
 
         }
         WriteTestcaseToFile(result);
