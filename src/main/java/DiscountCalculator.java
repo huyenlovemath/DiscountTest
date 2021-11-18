@@ -17,38 +17,15 @@ public class DiscountCalculator {
         //
         // cases of invalid input will return -1
         //
-        if (x < 1 || x > 1000) {
+        if (x < 1 || x > 1000 || y < 1 || y > 100 || z < 2011 || z > 2021) {
             return -1;
-        }
-        if (y < 1 || y > 100) {
-            return -1;
-        }
-        if (z < 2011 || z > 2021) {
-            return -1;
-        }
-        //
-        // discount of 0
-        //
-        if (100 < x && y < 20) {
-            nDiscount = 0;
-        }
-        //
-        // discount of 10 %
-        //
-        if (50 < x && x <= 100 && y < 20) {
-            nDiscount = 10;
-        }
-        //
-        // discount of 15%
-        //
-        if (100 < x && 20 <= y ) {
-            nDiscount = 15;
         }
 
-        //
-        // discount of 25%
-        //
-        if ((x <= 50) || ( x <= 100 && 20 <= y)) {
+        if (50 < x && x <= 100 && y < 20) {
+            nDiscount = 10;
+        } else if (100 < x && 20 <= y ) {
+            nDiscount = 15;
+        } else if (x <= 100) {
             nDiscount = 25;
         }
 
@@ -59,7 +36,6 @@ public class DiscountCalculator {
         if ( z <= 2018 ) {
             nDiscount += 25;
         }
-
 
         return nDiscount;
     }
